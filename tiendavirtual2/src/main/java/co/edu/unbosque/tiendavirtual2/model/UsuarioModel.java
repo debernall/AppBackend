@@ -1,23 +1,26 @@
 package co.edu.unbosque.tiendavirtual2.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.util.Objects;
 
 @Entity
-@Table(name="usuario")
+@Table(name = "usuario")
 public class UsuarioModel {
 	
 	@Id
+	@Column(unique = true, nullable = false)
 	private Long cedula_usuario;
+	
 	private String email_usuario;
+	
 	private String nombre_usuario;
+	
 	private String usuario;
+	
 	private String password;
 	
-	
+
 	public UsuarioModel() {
 
 	}
@@ -31,6 +34,7 @@ public class UsuarioModel {
 		this.usuario = usuario;
 		this.password = password;
 	}
+
 
 
 	public Long getCedula_usuario() {
@@ -114,6 +118,7 @@ public class UsuarioModel {
 				"password" + getPassword() + "'"+
 				")";
 	}
+
 
 
 }
